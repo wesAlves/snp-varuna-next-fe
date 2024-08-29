@@ -85,22 +85,20 @@ export default function Home() {
                                 </MapLayers>
                             </Map>
                         </div>
-                        <div>
+                        <div style={{padding: "24px"}}>
                             <h2><span>JM</span> Detalhes da instalação portuária</h2>
                             <h3>Port - São Francisco do Sul</h3>
 
                             <GridLayout
                                 rows={[
-                                    {height: 120},
-                                    {height: 120},
-                                    {height: 120},
+                                    {height: 96},
+                                    {height: 96},
+                                    {height: 96},
                                 ]}
                                 cols={[{width: 318}, {width: 272},]}
                                 gap={{rows: 16, cols: 16}}
-
-                                style={{padding: "24px"}}
                             >
-                                <GridLayoutItem rowSpan={3} className={"big-chart-container"}>
+                                <GridLayoutItem rowSpan={3} row={1} col={1} className={"big-chart-container"}>
                                     <Chart>
                                         <ChartSeries>
                                             <ChartSeriesItem
@@ -119,20 +117,19 @@ export default function Home() {
                                         <ChartLegend visible={false}/>
                                     </Chart>
                                 </GridLayoutItem>
-                                <GridLayoutItem>
-                                    <div>
+
+                                    <GridLayoutItem row={1} col={2} className={"big-numbers-container"}>
                                         <h4>Total inportações</h4>
                                         <p>R$ 1.789.456.353,00</p>
-                                    </div>
-                                    <div>
+                                    </GridLayoutItem>
+                                    <GridLayoutItem row={2} col={2} className={"big-numbers-container"}>
                                         <h4>Total inportações</h4>
                                         <p>R$ 1.789.456.353,00</p>
-                                    </div>
-                                    <div>
+                                    </GridLayoutItem>
+                                    <GridLayoutItem row={3} col={2} className={"big-numbers-container"}>
                                         <h4>Total inportações</h4>
                                         <p>R$ 1.789.456.353,00</p>
-                                    </div>
-                                </GridLayoutItem>
+                                    </GridLayoutItem>
                             </GridLayout>
 
 
