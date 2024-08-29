@@ -4,14 +4,14 @@ import {
     AppBar,
     AppBarSection,
     Drawer,
-    DrawerContent,
-    DrawerSelectEvent, PanelBar, PanelBarItem,
+    DrawerContent, GridLayout, GridLayoutItem,
     Splitter,
-    SplitterOnChangeEvent, SplitterPane
+    SplitterOnChangeEvent
 } from "@progress/kendo-react-layout";
-import {Map, MapLayers, MapTileLayer, TileUrlTemplateArgs} from "@progress/kendo-react-map";
 
-import styles from "./page.module.css";
+import {Chart, ChartLegend, ChartSeries, ChartSeriesItem, ChartSeriesLabels,} from "@progress/kendo-react-charts";
+
+import {Map, MapLayers, MapTileLayer, TileUrlTemplateArgs} from "@progress/kendo-react-map";
 import "./theme.scss";
 
 
@@ -33,15 +33,24 @@ const items = [
     }
 ]
 
+const data = [{"kind": "Hydroelectric", "share": 0.175},
+    {"kind": "Nuclear", "share": 0.238},
+    {"kind": "Coal", "share": 0.118},
+    {"kind": "Solar", "share": 0.052},
+    {"kind": "Wind", "share": 0.225},
+    {"kind": "Other", "share": 0.192}
+]
+
+const labelContent = (e: { category: any; }) => e.category;
+
 export default function Home() {
 
     const [selected, setSelected] = useState(items.findIndex((x) => x.selected === true));
     const tileUrl = (e: TileUrlTemplateArgs) =>
         `https://${e.subdomain}.tile.openstreetmap.org/${e.zoom}/${e.x}/${e.y}.png`;
 
-    // size?: string     min?: string     max?: string     resizable?: boolean     collapsible?: boolean     collapsed?: boolean     scrollable?: boolean     keepMounted?: boolean
     const [mainPanes, setMainPanes] = useState<Array<any>>([{}, {
-        id:2, collapsible: false, size: "400px", resizable: false, keepMounted: false
+        id: 2, collapsible: false, size: "659px", resizable: false, keepMounted: false
     }])
 
     const onTogglePane = (event: SplitterOnChangeEvent) => {
@@ -49,8 +58,8 @@ export default function Home() {
     }
 
     const changeByClick = () => {
-        const  updatedState = [...mainPanes];
-        updatedState[1].collapsed=!updatedState[1].collapsed;
+        const updatedState = [...mainPanes];
+        updatedState[1].collapsed = !updatedState[1].collapsed;
         setMainPanes(updatedState);
 
     }
@@ -77,11 +86,79 @@ export default function Home() {
                             </Map>
                         </div>
                         <div>
-                            Right pane
+                            <h2><span>JM</span> Detalhes da instalação portuária</h2>
+                            <h3>Port - São Francisco do Sul</h3>
+
+                            <GridLayout
+                                rows={[
+                                    {height: 120},
+                                    {height: 120},
+                                    {height: 120},
+                                ]}
+                                cols={[{width: 318}, {width: 272},]}
+                                gap={{rows: 16, cols: 16}}
+
+                                style={{padding: "24px"}}
+                            >
+                                <GridLayoutItem rowSpan={3} className={"big-chart-container"}>
+                                    <Chart>
+                                        <ChartSeries>
+                                            <ChartSeriesItem
+                                                type="donut"
+                                                data={data}
+                                                categoryField="kind"
+                                                field="share"
+                                            >
+                                                <ChartSeriesLabels
+                                                    color="#fff"
+                                                    background="none"
+                                                    content={labelContent}
+                                                />
+                                            </ChartSeriesItem>
+                                        </ChartSeries>
+                                        <ChartLegend visible={false}/>
+                                    </Chart>
+                                </GridLayoutItem>
+                                <GridLayoutItem>
+                                    <div>
+                                        <h4>Total inportações</h4>
+                                        <p>R$ 1.789.456.353,00</p>
+                                    </div>
+                                    <div>
+                                        <h4>Total inportações</h4>
+                                        <p>R$ 1.789.456.353,00</p>
+                                    </div>
+                                    <div>
+                                        <h4>Total inportações</h4>
+                                        <p>R$ 1.789.456.353,00</p>
+                                    </div>
+                                </GridLayoutItem>
+                            </GridLayout>
+
+
+                            <div>
+                                ChartBar
+                            </div>
+
+                            <div>
+                                <h4>Informações gerais</h4>
+                                <div>Inputs</div>
+                            </div>
+
+                            <div>
+                                <div>Big image</div>
+                                <div>
+                                    <div>small image</div>
+                                    <div>small image</div>
+                                    <div>small image</div>
+                                </div>
+                            </div>
                         </div>
                     </Splitter>
                 </DrawerContent>
             </Drawer>
+
+
         </main>
     );
 }
