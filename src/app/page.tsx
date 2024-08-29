@@ -41,6 +41,11 @@ const data = [{"kind": "Hydroelectric", "share": 0.175},
     {"kind": "Other", "share": 0.192}
 ]
 
+const [firstSeries, secondSeries]: number[][] = [
+    [1, 3, 5, 7, 6, 4, 2],
+    [2, 4, 6, 8, 5, 3, 1],
+];
+
 const labelContent = (e: { category: any; }) => e.category;
 
 export default function Home() {
@@ -118,23 +123,38 @@ export default function Home() {
                                     </Chart>
                                 </GridLayoutItem>
 
-                                    <GridLayoutItem row={1} col={2} className={"big-numbers-container"}>
-                                        <h4>Total inportações</h4>
-                                        <p>R$ 1.789.456.353,00</p>
-                                    </GridLayoutItem>
-                                    <GridLayoutItem row={2} col={2} className={"big-numbers-container"}>
-                                        <h4>Total inportações</h4>
-                                        <p>R$ 1.789.456.353,00</p>
-                                    </GridLayoutItem>
-                                    <GridLayoutItem row={3} col={2} className={"big-numbers-container"}>
-                                        <h4>Total inportações</h4>
-                                        <p>R$ 1.789.456.353,00</p>
-                                    </GridLayoutItem>
+                                <GridLayoutItem row={1} col={2} className={"big-numbers-container"}>
+                                    <h4>Total inportações</h4>
+                                    <p>R$ 1.789.456.353,00</p>
+                                </GridLayoutItem>
+                                <GridLayoutItem row={2} col={2} className={"big-numbers-container"}>
+                                    <h4>Total inportações</h4>
+                                    <p>R$ 1.789.456.353,00</p>
+                                </GridLayoutItem>
+                                <GridLayoutItem row={3} col={2} className={"big-numbers-container"}>
+                                    <h4>Total inportações</h4>
+                                    <p>R$ 1.789.456.353,00</p>
+                                </GridLayoutItem>
                             </GridLayout>
 
 
-                            <div>
-                                ChartBar
+                            <div style={{minHeight: "280px", padding: "16px", marginTop: "32px"}}
+                                 className={"big-chart-container"}>
+                                <div style={{display: "flex", marginBottom: "32px"}}>
+                                    <h4 style={{flex: 1}}>Ranking de produtos movimentados</h4>
+                                    <div style={{justifySelf: "self-end"}}>
+                                        icons
+                                    </div>
+
+                                </div>
+
+
+                                <Chart style={{maxHeight: "232px"}}>
+                                    <ChartSeries>
+                                        <ChartSeriesItem type="column" data={firstSeries}/>
+                                        <ChartSeriesItem type="column" data={secondSeries}/>
+                                    </ChartSeries>
+                                </Chart>
                             </div>
 
                             <div>
