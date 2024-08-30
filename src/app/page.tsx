@@ -112,6 +112,7 @@ export default function Home() {
                                 ]}
                                 cols={[{width: 318}, {width: 272},]}
                                 gap={{rows: 16, cols: 16}}
+                                style={{marginTop: "32px"}}
                             >
                                 <GridLayoutItem rowSpan={3} row={1} col={1} className={"big-chart-container"}>
                                     <Chart>
@@ -165,18 +166,29 @@ export default function Home() {
                                 </Chart>
                             </div>
 
-                            <div>
+                            <div style={{marginTop: "64px"}}>
                                 <h4>Informações gerais</h4>
                                 <div>
-                                    <div><Label>
-                                        Nome
-                                    </Label>
+                                    <div style={{marginTop: "16px"}}>
+                                        <Label>
+                                            Nome
+                                        </Label>
                                         <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                value={"Nome da intalação portuária"} style={{border: "1px solid"}}/>
                                     </div>
 
                                     <div style={{marginTop: "16px"}}>
+                                        <Label>
+                                            CNPJ
+                                        </Label>
+                                        <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                               value={"12.456.789/0001-45"}
+                                               style={{border: "1px solid"}}/>
+                                    </div>
+
+                                    <div style={{marginTop: "24px"}}>
                                         <h5>Localização</h5>
+
                                         <div style={{display: "flex", gap: "16px"}}>
                                             <div style={{maxWidth: "64px"}}>
                                                 <Label>
@@ -197,6 +209,7 @@ export default function Home() {
                                                        style={{border: "1px solid"}}/>
                                             </div>
                                         </div>
+
                                         <div>
                                             <Label>
                                                 Endereço
@@ -204,6 +217,7 @@ export default function Home() {
                                             <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                    value={"Nome da intalação portuária"} style={{border: "1px solid"}}/>
                                         </div>
+
                                         <div style={{display: "flex", gap: "16px"}}>
                                             <div>
                                                 <Label>
@@ -222,60 +236,75 @@ export default function Home() {
                                                        style={{border: "1px solid"}}/>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div>
-                                            <h5>Contato</h5>
+                                    <div style={{marginTop: "24px"}}>
+                                        <h5>Contato</h5>
 
-                                            <div style={{display: "flex", gap: "16px"}}>
-                                                <div>
-                                                    <Label>
-                                                        Telefone
-                                                    </Label>
-                                                    <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
-                                                           value={"45 1234 56789"}
-                                                           style={{border: "1px solid"}}/>
-                                                </div>
-                                                <div>
-                                                    <Label>
-                                                        E-mail
-                                                    </Label>
-                                                    <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
-                                                           value={"contato@portosfsul.br"}
-                                                           style={{border: "1px solid"}}/>
-                                                </div>
+                                        <div style={{display: "flex", gap: "16px"}}>
+                                            <div>
+                                                <Label>
+                                                    Telefone
+                                                </Label>
+                                                <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                       value={"45 1234 56789"}
+                                                       style={{border: "1px solid"}}/>
                                             </div>
-
-                                            <div style={{display: "flex", gap: "16px"}}>
-                                                <div>
-                                                    <Label>
-                                                        Latitude
-                                                    </Label>
-                                                    <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
-                                                           value={"Nome da intalação portuária"}
-                                                           style={{border: "1px solid"}}/>
-                                                </div>
-                                                <div>
-                                                    <Label>
-                                                        Longitude
-                                                    </Label>
-                                                    <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
-                                                           value={"Nome da intalação portuária"}
-                                                           style={{border: "1px solid"}}/>
-                                                </div>
+                                            <div>
+                                                <Label>
+                                                    E-mail
+                                                </Label>
+                                                <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                       value={"contato@portosfsul.br"}
+                                                       style={{border: "1px solid"}}/>
                                             </div>
                                         </div>
 
+                                        <div>
+                                            <Label>
+                                                Site
+                                            </Label>
+                                            <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                   value={"Nome da intalação portuária"}
+                                                   style={{border: "1px solid"}}/>
+                                        </div>
                                     </div>
+
 
                                 </div>
                             </div>
 
-                            <div>
-                                <div>Big image</div>
-                                <div>
-                                    <div>small image</div>
-                                    <div>small image</div>
-                                    <div>small image</div>
+                            <div style={{marginTop: "64px"}}>
+                                <div style={{
+                                    width: "604px",
+                                    height: "310px",
+                                    borderRadius: "8px",
+                                    background: "#d9d9d9"
+                                }}>Big image
+                                </div>
+
+                                <div style={{display: "flex", width: "604px", height: "140px", gap:"8px", marginTop: "16px"}}>
+                                    <div style={{
+                                        width: "196px",
+                                        height: "140px",
+                                        borderRadius: "8px",
+                                        background: "#d9d9d9"
+                                    }}>small image
+                                    </div>
+                                    <div style={{
+                                        width: "196px",
+                                        height: "140px",
+                                        borderRadius: "8px",
+                                        background: "#d9d9d9"
+                                    }}>small image
+                                    </div>
+                                    <div style={{
+                                        width: "196px",
+                                        height: "140px",
+                                        borderRadius: "8px",
+                                        background: "#d9d9d9"
+                                    }}>small image
+                                    </div>
                                 </div>
                             </div>
                         </div>
