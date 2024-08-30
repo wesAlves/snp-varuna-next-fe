@@ -65,7 +65,7 @@ export default function Home() {
         `https://${e.subdomain}.tile.openstreetmap.org/${e.zoom}/${e.x}/${e.y}.png`;
 
     const [mainPanes, setMainPanes] = useState<Array<any>>([{}, {
-        id: 2, collapsible: false, size: "659px", resizable: false, keepMounted: false
+        id: 2, collapsible: false, size: "659px", resizable: false, keepMounted: false, scrollable: true
     }])
 
     const onTogglePane = (event: SplitterOnChangeEvent) => {
@@ -91,16 +91,17 @@ export default function Home() {
                 <DrawerContent>
                     <Splitter panes={mainPanes} onChange={onTogglePane}>
                         <div>
-                            <button onClick={() => changeByClick()}>Change panel
+                            <button onClick={() => changeByClick()}  style={{position:"absolute", top: "44px", left: "300px", zIndex:1000}}>Change panel
                             </button>
 
-                            <Map style={{height: "100vh"}} zoom={15}>
+                            <Map style={{height: "calc(100vh - 48px"}} center={[-15.7975, -47.8985]} zoom={5}>
                                 <MapLayers>
                                     <MapTileLayer urlTemplate={tileUrl}/>
                                 </MapLayers>
                             </Map>
                         </div>
-                        <div style={{padding: "24px"}}>
+
+                        <div style={{padding: "24px", height: "100%", maxHeight: "calc(100vh - 48px"}}>
                             <h2><span>JM</span> Detalhes da instalação portuária</h2>
                             <h3>Port - São Francisco do Sul</h3>
 
@@ -174,7 +175,7 @@ export default function Home() {
                                             Nome
                                         </Label>
                                         <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
-                                               value={"Nome da intalação portuária"} style={{border: "1px solid"}}/>
+                                               value={"Nome da intalação portuária"}/>
                                     </div>
 
                                     <div style={{marginTop: "16px"}}>
@@ -183,7 +184,7 @@ export default function Home() {
                                         </Label>
                                         <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                value={"12.456.789/0001-45"}
-                                               style={{border: "1px solid"}}/>
+                                               style={{}}/>
                                     </div>
 
                                     <div style={{marginTop: "24px"}}>
@@ -196,7 +197,7 @@ export default function Home() {
                                                 </Label>
                                                 <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                        value={"SC"}
-                                                       style={{border: "1px solid"}}
+                                                       style={{}}
                                                        maxLength={3}
                                                 />
                                             </div>
@@ -206,7 +207,7 @@ export default function Home() {
                                                 </Label>
                                                 <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                        value={"Nome da intalação portuária"}
-                                                       style={{border: "1px solid"}}/>
+                                                       style={{}}/>
                                             </div>
                                         </div>
 
@@ -215,7 +216,7 @@ export default function Home() {
                                                 Endereço
                                             </Label>
                                             <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
-                                                   value={"Nome da intalação portuária"} style={{border: "1px solid"}}/>
+                                                   value={"Nome da intalação portuária"} style={{}}/>
                                         </div>
 
                                         <div style={{display: "flex", gap: "16px"}}>
@@ -225,7 +226,7 @@ export default function Home() {
                                                 </Label>
                                                 <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                        value={"-26.237481331890866"}
-                                                       style={{border: "1px solid"}}/>
+                                                       style={{}}/>
                                             </div>
                                             <div>
                                                 <Label>
@@ -233,7 +234,7 @@ export default function Home() {
                                                 </Label>
                                                 <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                        value={"-26.237481331890866"}
-                                                       style={{border: "1px solid"}}/>
+                                                       style={{}}/>
                                             </div>
                                         </div>
                                     </div>
@@ -248,7 +249,7 @@ export default function Home() {
                                                 </Label>
                                                 <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                        value={"45 1234 56789"}
-                                                       style={{border: "1px solid"}}/>
+                                                       style={{}}/>
                                             </div>
                                             <div>
                                                 <Label>
@@ -256,7 +257,7 @@ export default function Home() {
                                                 </Label>
                                                 <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                        value={"contato@portosfsul.br"}
-                                                       style={{border: "1px solid"}}/>
+                                                       style={{}}/>
                                             </div>
                                         </div>
 
@@ -266,7 +267,7 @@ export default function Home() {
                                             </Label>
                                             <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
                                                    value={"Nome da intalação portuária"}
-                                                   style={{border: "1px solid"}}/>
+                                                   style={{}}/>
                                         </div>
                                     </div>
 
@@ -274,7 +275,7 @@ export default function Home() {
                                 </div>
                             </div>
 
-                            <div style={{marginTop: "64px"}}>
+                            <div style={{marginTop: "64px", paddingBottom:"32px"}}>
                                 <div style={{
                                     width: "604px",
                                     height: "310px",
@@ -283,7 +284,13 @@ export default function Home() {
                                 }}>Big image
                                 </div>
 
-                                <div style={{display: "flex", width: "604px", height: "140px", gap:"8px", marginTop: "16px"}}>
+                                <div style={{
+                                    display: "flex",
+                                    width: "604px",
+                                    height: "140px",
+                                    gap: "8px",
+                                    marginTop: "16px"
+                                }}>
                                     <div style={{
                                         width: "196px",
                                         height: "140px",
