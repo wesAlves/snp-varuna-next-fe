@@ -1,6 +1,7 @@
 "use client"
 import {AppBar, AppBarSection, Drawer, DrawerContent} from "@progress/kendo-react-layout";
 import {useState} from "react";
+import CustomDrawer from "@/app/components/CustomDrawer";
 
 // children?: any
 // className?: string
@@ -38,8 +39,8 @@ const items = [
 ]
 
 export default function AppLayoutWithDrawer({
-                                      children,
-                                  }: Readonly<{
+                                                children,
+                                            }: Readonly<{
     children: React.ReactNode;
 }>) {
 
@@ -66,8 +67,8 @@ export default function AppLayoutWithDrawer({
 }
 
 export function AppLayoutWithCustomDrawer({
-                                                children,
-                                            }: Readonly<{
+                                              children,
+                                          }: Readonly<{
     children: React.ReactNode;
 }>) {
 
@@ -79,6 +80,9 @@ export function AppLayoutWithCustomDrawer({
                 <AppBarSection>Jaca</AppBarSection>
             </AppBar>
 
+            <CustomDrawer>
+                {children}
+            </CustomDrawer>
 
         </>
     )
