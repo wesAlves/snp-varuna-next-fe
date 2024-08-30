@@ -1,0 +1,16 @@
+$kendo-color-primary: #ff69b4;
+@import "~@progress/kendo-theme-material/dist/all.scss";
+.k-map{
+  height:calc(100vh - 48px)
+}
+
+
+.big-chart-container{
+  border-radius: 8px;
+  border:1px solid #d9d9d9;
+  overflow: hidden;
+}
+.big-numbers-container{
+  border-radius: 8px;
+  border:1px solid #d9d9d9;
+}
