@@ -13,6 +13,8 @@
     "@progress/kendo-drawing": "^1.20.2",
     "@progress/kendo-react-buttons": "^8.2.0",
     "@progress/kendo-react-charts": "^8.2.0",
+    "@progress/kendo-react-form": "^8.2.0",
+    "@progress/kendo-react-inputs": "^8.2.0",
     "@progress/kendo-react-layout": "^8.2.0",
     "@progress/kendo-react-map": "^8.2.0",
     "@progress/kendo-theme-material": "^9.0.0",

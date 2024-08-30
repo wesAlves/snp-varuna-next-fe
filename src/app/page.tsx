@@ -9,10 +9,20 @@ import {
     SplitterOnChangeEvent
 } from "@progress/kendo-react-layout";
 
+import {
+    Form,
+    Field,
+    FormElement,
+    FieldWrapper,
+} from "@progress/kendo-react-form";
+
+import {Input} from "@progress/kendo-react-inputs";
+
 import {Chart, ChartLegend, ChartSeries, ChartSeriesItem, ChartSeriesLabels,} from "@progress/kendo-react-charts";
 
 import {Map, MapLayers, MapTileLayer, TileUrlTemplateArgs} from "@progress/kendo-react-map";
 import "./theme.scss";
+import {Label} from "@progress/kendo-react-labels";
 
 
 const items = [
@@ -145,9 +155,7 @@ export default function Home() {
                                     <div style={{justifySelf: "self-end"}}>
                                         icons
                                     </div>
-
                                 </div>
-
 
                                 <Chart style={{maxHeight: "232px"}}>
                                     <ChartSeries>
@@ -159,7 +167,107 @@ export default function Home() {
 
                             <div>
                                 <h4>Informações gerais</h4>
-                                <div>Inputs</div>
+                                <div>
+                                    <div><Label>
+                                        Nome
+                                    </Label>
+                                        <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                               value={"Nome da intalação portuária"} style={{border: "1px solid"}}/>
+                                    </div>
+
+                                    <div style={{marginTop: "16px"}}>
+                                        <h5>Localização</h5>
+                                        <div style={{display: "flex", gap: "16px"}}>
+                                            <div style={{maxWidth: "64px"}}>
+                                                <Label>
+                                                    UF
+                                                </Label>
+                                                <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                       value={"SC"}
+                                                       style={{border: "1px solid"}}
+                                                       maxLength={3}
+                                                />
+                                            </div>
+                                            <div style={{flex: 1, width: "100%"}}>
+                                                <Label>
+                                                    Município
+                                                </Label>
+                                                <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                       value={"Nome da intalação portuária"}
+                                                       style={{border: "1px solid"}}/>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <Label>
+                                                Endereço
+                                            </Label>
+                                            <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                   value={"Nome da intalação portuária"} style={{border: "1px solid"}}/>
+                                        </div>
+                                        <div style={{display: "flex", gap: "16px"}}>
+                                            <div>
+                                                <Label>
+                                                    Latitude
+                                                </Label>
+                                                <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                       value={"-26.237481331890866"}
+                                                       style={{border: "1px solid"}}/>
+                                            </div>
+                                            <div>
+                                                <Label>
+                                                    Longitude
+                                                </Label>
+                                                <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                       value={"-26.237481331890866"}
+                                                       style={{border: "1px solid"}}/>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <h5>Contato</h5>
+
+                                            <div style={{display: "flex", gap: "16px"}}>
+                                                <div>
+                                                    <Label>
+                                                        Telefone
+                                                    </Label>
+                                                    <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                           value={"45 1234 56789"}
+                                                           style={{border: "1px solid"}}/>
+                                                </div>
+                                                <div>
+                                                    <Label>
+                                                        E-mail
+                                                    </Label>
+                                                    <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                           value={"contato@portosfsul.br"}
+                                                           style={{border: "1px solid"}}/>
+                                                </div>
+                                            </div>
+
+                                            <div style={{display: "flex", gap: "16px"}}>
+                                                <div>
+                                                    <Label>
+                                                        Latitude
+                                                    </Label>
+                                                    <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                           value={"Nome da intalação portuária"}
+                                                           style={{border: "1px solid"}}/>
+                                                </div>
+                                                <div>
+                                                    <Label>
+                                                        Longitude
+                                                    </Label>
+                                                    <Input valid={true} disabled={true} ariaDescribedBy={"jaca"}
+                                                           value={"Nome da intalação portuária"}
+                                                           style={{border: "1px solid"}}/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
                             </div>
 
                             <div>
