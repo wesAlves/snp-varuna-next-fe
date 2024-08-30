@@ -37,7 +37,7 @@ const items = [
     },
 ]
 
-export default function AppLayout({
+export default function AppLayoutWithDrawer({
                                       children,
                                   }: Readonly<{
     children: React.ReactNode;
@@ -61,6 +61,25 @@ export default function AppLayout({
                     {children}
                 </DrawerContent>
             </Drawer>
+        </>
+    )
+}
+
+export function AppLayoutWithCustomDrawer({
+                                                children,
+                                            }: Readonly<{
+    children: React.ReactNode;
+}>) {
+
+    const [selected, setSelected] = useState(items.findIndex((x) => x.selected === true));
+
+    return (
+        <>
+            <AppBar>
+                <AppBarSection>Jaca</AppBarSection>
+            </AppBar>
+
+
         </>
     )
 }

@@ -10,7 +10,7 @@ import {
 import "./theme.scss";
 import AnalyticPage from "@/app/analitico/page";
 import MapPage from "@/app/mapa/page";
-import AppLayout from "@/app/components/appLayout";
+import AppLayoutWithDrawer from "@/app/components/appLayoutWithDrawer";
 
 const items = [
     {
@@ -34,8 +34,8 @@ export default function Home() {
     const [selected, setSelected] = useState(items.findIndex((x) => x.selected === true));
 
     return (
-        <AppLayout>
+        <AppLayoutWithDrawer>
             Home
-        </AppLayout>
+        </AppLayoutWithDrawer>
     );
 }

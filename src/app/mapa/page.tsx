@@ -1,10 +1,10 @@
 import SplitterCustom from "@/app/components/SplitterCustom";
-import AppLayout from "@/app/components/appLayout";
+import AppLayoutWithDrawer from "@/app/components/appLayoutWithDrawer";
 
 export default function MapPage (){
     return (
-        <AppLayout>
+        <AppLayoutWithDrawer>
             <SplitterCustom/>
-        </AppLayout>
+        </AppLayoutWithDrawer>
     )
 }
