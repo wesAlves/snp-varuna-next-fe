@@ -1,7 +1,9 @@
+import AppLayout from "@/app/components/appLayout";
+
 export default function AnalyticPage (){
     return (
-        <div>
+        <AppLayout>
             <h1>Analytic</h1>
-        </div>
+        </AppLayout>
     )
 }

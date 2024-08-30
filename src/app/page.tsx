@@ -10,6 +10,7 @@ import {
 import "./theme.scss";
 import AnalyticPage from "@/app/analitico/page";
 import MapPage from "@/app/mapa/page";
+import AppLayout from "@/app/components/appLayout";
 
 const items = [
     {
@@ -33,18 +34,8 @@ export default function Home() {
     const [selected, setSelected] = useState(items.findIndex((x) => x.selected === true));
 
     return (
-        <>
-            <AppBar>
-                <AppBarSection>Jaca</AppBarSection>
-            </AppBar>
-            <Drawer expanded={true} mode="push" position={"start"} mini={true} items={items.map((item, index) => ({
-                ...item,
-                selected: index === selected,
-            }))}>
-                <DrawerContent>
-                    <MapPage />
-                </DrawerContent>
-            </Drawer>
-        </>
+        <AppLayout>
+            Home
+        </AppLayout>
     );
 }
